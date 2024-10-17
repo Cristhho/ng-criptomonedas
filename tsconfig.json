@@ -6,6 +6,9 @@
     "paths": {
       "@domain": [
         "./dist/domain"
+      ],
+      "@criptomonedas": [
+        "./dist/criptomonedas-lib"
       ]
     },
     "forceConsistentCasingInFileNames": true,
