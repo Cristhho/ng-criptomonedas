@@ -25,6 +25,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -84,9 +85,11 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "karmaConfig": "karma.conf.js"
           }
         }
       }
@@ -129,7 +132,7 @@
       "schematics": {},
       "root": "projects/criptomonedas",
       "sourceRoot": "projects/criptomonedas/src",
-      "prefix": "app",
+      "prefix": "cry",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -146,6 +149,7 @@
               "projects/criptomonedas/src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "projects/criptomonedas/src/styles.css"
             ],
             "scripts": []
@@ -207,7 +211,8 @@
             "styles": [
               "projects/criptomonedas/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "karmaConfig": "projects/criptomonedas/karma.conf.js"
           }
         }
       }

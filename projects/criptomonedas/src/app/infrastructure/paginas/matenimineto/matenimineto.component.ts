@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-matenimineto',
+  selector: 'cry-matenimineto',
   standalone: true,
   imports: [
     CommonModule,
