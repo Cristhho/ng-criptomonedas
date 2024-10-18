@@ -1,0 +1,15 @@
+<mat-form-field [ngClass]="errorClass" coreFormInputError
+[inputControl]="formControl">
+  @if (label) {
+    <mat-label [id]="inputId">{{label}}</mat-label>
+  }
+  <input
+    matInput
+    [id]="inputId"
+    [type]="inputType"
+    [placeholder]="placeholder"
+    [value]="value"
+    (input)="onChangeHandler($event)"
+    (blur)="onBlurHandler()"
+    #inputRef>
+</mat-form-field>

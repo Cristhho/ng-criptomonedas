@@ -2,6 +2,8 @@ import { inject, Injectable, signal } from '@angular/core';
 
 import { CriptomonedasService } from './criptomonedas.service';
 import { Crypto, SesionAdapter } from '@domain';
+import { finalize } from 'rxjs';
+import { ToastService } from '@ui-lib';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +11,7 @@ import { Crypto, SesionAdapter } from '@domain';
 export class StorageService implements SesionAdapter {
   private readonly storageKey = "CRYPTOS";
   private readonly servicioCripto = inject(CriptomonedasService);
+  private readonly toastService = inject(ToastService);
   public criptosSignal = signal<Array<Crypto>>([]);
   public cargando = signal(false);
 
@@ -16,11 +19,17 @@ export class StorageService implements SesionAdapter {
     this.cargando.set(true);
     const criptosEnSession = this.cargarDesdeSesion();
     if (criptosEnSession === null) {
-      this.servicioCripto.obtenerTodo().subscribe({
+      this.servicioCripto.obtenerTodo().pipe(
+        finalize(() => this.cargando.set(false))
+      ).subscribe({
         next: (criptos) => {
           this.guardarCriptos(criptos);
-          this.cargando.set(false);
-        }
+          this.toastService.add({
+            message: "Criptomonedas guardadas en sesion",
+            type: "success",
+            duration: 3000,
+          });
+        },
       });
     } else {
       this.criptosSignal.set(JSON.parse(criptosEnSession) as Array<Crypto>);
