@@ -6,6 +6,7 @@ import {MatSelectChange, MatSelectModule} from "@angular/material/select";
 import { BaseInputComponent } from "../BaseInputComponent";
 import { NG_VALUE_ACCESSOR } from "@angular/forms";
 import { FormInputErrorDirective } from "../../directives";
+import { Estado } from "@domain";
 
 @Component({
   selector: "ui-select-estado",
@@ -30,7 +31,7 @@ export class SelectEstadoComponent extends BaseInputComponent {
   @ViewChild(FormInputErrorDirective)
   private childDirective!: FormInputErrorDirective;
 
-  override value = "";
+  override value: Estado | undefined = undefined;
 
   override onChangeHandler(event: MatSelectChange): void {
     this.onChange(event.value);

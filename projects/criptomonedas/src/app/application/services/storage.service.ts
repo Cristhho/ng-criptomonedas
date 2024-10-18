@@ -55,6 +55,18 @@ export class StorageService implements SesionAdapter {
     this.guardarCriptos(nuevasCryptos);
   }
 
+  agregar(cripto: Crypto) {
+    const criptosEnSession = this.cargarDesdeSesion();
+    const jsonCryptos = JSON.parse(criptosEnSession!) as Array<Crypto>;
+    jsonCryptos.unshift(cripto);
+    this.guardarCriptos(jsonCryptos);
+    this.toastService.add({
+      message: "Se guardo correctamente.",
+      type: "success",
+      duration: 3000,
+    });
+  }
+
   private cargarDesdeSesion() {
     return window.sessionStorage.getItem(this.storageKey);
   }

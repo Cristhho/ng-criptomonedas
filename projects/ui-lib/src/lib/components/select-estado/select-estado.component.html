@@ -3,7 +3,7 @@
   <mat-label>{{label}}</mat-label>
   <mat-select [value]="value" (blur)="onBlurHandler()" (selectionChange)="onChangeHandler($event)">
     <mat-option></mat-option>
-    <mat-option value="A">Activo</mat-option>
-    <mat-option value="I">Inactivo</mat-option>
+    <mat-option [value]="0">Activo</mat-option>
+    <mat-option [value]="1">Inactivo</mat-option>
   </mat-select>
 </mat-form-field>
