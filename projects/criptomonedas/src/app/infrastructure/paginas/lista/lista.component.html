@@ -18,7 +18,7 @@
     <ng-container matColumnDef="acciones">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell [ngStyle]="{textAlign: 'center'}" *matCellDef="let element">
-        <button mat-mini-fab>
+        <button mat-mini-fab (click)="editar(element.id)">
           <mat-icon>edit</mat-icon>
         </button>
         <cry-btn-eliminar [id]="element.id"/>

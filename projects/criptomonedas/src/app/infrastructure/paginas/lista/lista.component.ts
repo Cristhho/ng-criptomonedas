@@ -9,6 +9,7 @@ import { Crypto } from '@domain';
 import { StorageService } from '../../../application/services';
 import { ProgressBarComponent } from '@ui-lib';
 import { BtnEliminarComponent } from '../../ui';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'cry-lista',
@@ -34,6 +35,9 @@ export class ListaComponent implements OnInit {
 
   public columnas: string[] = ["id", "nombre", "descripcion", "acciones"];
 
+  private readonly router = inject(Router);
+  private readonly route = inject(ActivatedRoute);
+
   constructor() {
     effect(() => {
       this.dataSource.data = this.storageService.criptosSignal();
@@ -43,6 +47,10 @@ export class ListaComponent implements OnInit {
 
   ngOnInit(): void {
     this.storageService.obtenerCriptos();
+  }
+
+  public editar(id: Crypto["id"]) {
+    this.router.navigate([id], /* { relativeTo: this.route } */);
   }
 }
 

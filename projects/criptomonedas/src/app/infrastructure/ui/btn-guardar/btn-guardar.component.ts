@@ -35,5 +35,14 @@ export class BtnGuardarComponent {
     this.storageService.agregar(this.formularioService.crearModelo());
     this.reiniciarFormulario();
   }
+
+  public actualizar() {
+    if (this.formularioService.formulario.invalid) {
+      this.formularioService.formulario.markAllAsTouched();
+      return;
+    }
+    const { id, ...rest } = this.formularioService.crearModelo();
+    this.storageService.actualizar(id, rest);
+  }
 }
 

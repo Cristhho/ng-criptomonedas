@@ -37,7 +37,10 @@ export class FormularioService {
   }
 
   public crearModelo(): Crypto {
-    return this.formulario.value as Crypto;
+    return {
+      ...this._formulario.value,
+      id: this._formulario.get("id")?.value
+    } as Crypto;
   }
 
 }

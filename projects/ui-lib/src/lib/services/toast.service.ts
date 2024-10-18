@@ -12,7 +12,6 @@ export class ToastService {
 
   public add(message: ToastModel) {
     this._toasts.push(message);
-    console.log("Mostrando toast");
     setTimeout(() => this.remove(0), message.duration ?? 4000);
   }
 

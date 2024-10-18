@@ -1,1 +1,1 @@
-<button mat-flat-button color="primary" (click)="guardar()">Guardar</button>
+<button mat-flat-button color="primary" (click)="editando ? actualizar() : guardar()">{{editando ? "Actualizar" : "Guardar"}}</button>
