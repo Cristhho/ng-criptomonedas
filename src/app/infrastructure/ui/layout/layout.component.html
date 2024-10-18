@@ -1,3 +1,8 @@
+<app-cabecera />
 <main>
-  <router-outlet />
+  @defer {
+    <router-outlet />
+  } @placeholder (minimum 500ms) {
+    <ui-progress-bar />
+  }
 </main>

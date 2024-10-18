@@ -9,6 +9,9 @@
       ],
       "@criptomonedas": [
         "./dist/criptomonedas-lib"
+      ],
+      "@ui-lib": [
+        "./dist/ui-lib"
       ]
     },
     "forceConsistentCasingInFileNames": true,
