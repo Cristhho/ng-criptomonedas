@@ -52,7 +52,7 @@ describe("apiUrlInterceptor", () => {
       },
     });
     const req = httpTestingController.expectOne(url);
-    req.flush({message: errorMsg}, {status: 500, statusText: "API error"});
+    req.flush({error: errorMsg}, {status: 500, statusText: "API error"});
     expect(toastSpy.add).toHaveBeenCalled();
     expect(toastSpy.add).toHaveBeenCalledWith({
       message: `Código de error: 500, ${errorMsg}`,

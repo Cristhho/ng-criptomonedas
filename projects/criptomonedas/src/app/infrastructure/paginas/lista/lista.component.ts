@@ -50,7 +50,7 @@ export class ListaComponent implements OnInit {
   }
 
   public editar(id: Crypto["id"]) {
-    this.router.navigate([id], /* { relativeTo: this.route } */);
+    this.router.navigate([id], { relativeTo: this.route.parent });
   }
 }
 

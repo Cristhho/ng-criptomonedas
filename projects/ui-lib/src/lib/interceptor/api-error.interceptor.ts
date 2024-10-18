@@ -8,7 +8,6 @@ export const apiErrorInterceptor: HttpInterceptorFn = (req, next) => {
   const toastService = inject(ToastService);
   return next(req).pipe(
     catchError((err: HttpErrorResponse) => {
-      console.log(err);
       if (!err.error) toastService.add({
         message: `Ocurrio un error: ${err.statusText}`,
         type: 'error'

@@ -4,3 +4,10 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+.mdc-text-field--invalid .mat-mdc-floating-label {
+  color: var(--mdc-filled-text-field-error-label-text-color) !important;
+}
