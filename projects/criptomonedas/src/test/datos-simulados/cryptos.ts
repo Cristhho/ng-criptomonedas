@@ -5,11 +5,11 @@ export const crypto: Crypto = {
   estado: Estado.ACTIVO,
   id: "bitcoin",
   nombre: "Bitcoin",
-  signo: "btc"
+  signo: "btc",
 };
 
 export const cryptoDto: CryptoResponseDTO = {
   id: "bitcoin",
   name: "Bitcoin",
-  symbol: "btc"
+  symbol: "btc",
 };

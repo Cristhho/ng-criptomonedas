@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { ChangeDetectionStrategy, Component } from "@angular/core";
-import {MatCardModule} from "@angular/material/card";
+import { MatCardModule } from "@angular/material/card";
 
 import { FormularioService } from "../../../application/services/formulario.service";
 import { BtnGuardarComponent, FormCriptoComponent } from "../../ui";
@@ -12,17 +12,14 @@ import { BtnGuardarComponent, FormCriptoComponent } from "../../ui";
     CommonModule,
     MatCardModule,
     FormCriptoComponent,
-    BtnGuardarComponent
+    BtnGuardarComponent,
   ],
   templateUrl: "./matenimineto.component.html",
   styleUrl: "./matenimineto.component.css",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MateniminetoComponent {
-  constructor(
-    private readonly formularioService: FormularioService
-  ) {
+  constructor(private readonly formularioService: FormularioService) {
     this.formularioService.construirFormulario();
   }
 }
-

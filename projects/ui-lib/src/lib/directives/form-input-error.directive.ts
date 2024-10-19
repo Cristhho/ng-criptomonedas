@@ -14,7 +14,7 @@ import { ValidationErrorService } from "../services/validation-error.service";
  * the input element shoul be wrapped in a container in order to append an HTMLElement with the message.
  */
 @Directive({
-  selector: "[coreFormInputError]",
+  selector: "[uiFormInputError]",
   standalone: true,
 })
 export class FormInputErrorDirective implements OnInit {
@@ -25,13 +25,11 @@ export class FormInputErrorDirective implements OnInit {
 
   constructor(
     private readonly el: ElementRef,
-    private readonly validationService: ValidationErrorService
+    private readonly validationService: ValidationErrorService,
   ) {
     this.errorContainer = document.createElement("span");
     this.errorContainer.classList.add(
-      ..."mat-mdc-form-field-error mat-mdc-form-field-bottom-align".split(
-        " "
-      )
+      ..."mat-mdc-form-field-error mat-mdc-form-field-bottom-align".split(" "),
     );
   }
 
@@ -59,7 +57,7 @@ export class FormInputErrorDirective implements OnInit {
   private invalidStatus() {
     const element = this.el.nativeElement as HTMLElement;
     const error = this.validationService.getErrorMessage(
-      this.inputControl.errors!
+      this.inputControl.errors!,
     );
     this.errorContainer.textContent = error;
     element.parentNode?.append(this.errorContainer);

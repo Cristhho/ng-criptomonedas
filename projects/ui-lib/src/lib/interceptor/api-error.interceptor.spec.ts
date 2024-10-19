@@ -1,6 +1,14 @@
-import { HttpTestingController, provideHttpClientTesting } from "@angular/common/http/testing";
+import {
+  HttpTestingController,
+  provideHttpClientTesting,
+} from "@angular/common/http/testing";
 import { TestBed } from "@angular/core/testing";
-import { HttpClient, HttpErrorResponse, provideHttpClient, withInterceptors } from "@angular/common/http";
+import {
+  HttpClient,
+  HttpErrorResponse,
+  provideHttpClient,
+  withInterceptors,
+} from "@angular/common/http";
 
 import { apiErrorInterceptor } from "./api-error.interceptor";
 import { ToastService } from "../services/toast.service";
@@ -16,7 +24,7 @@ describe("apiUrlInterceptor", () => {
       providers: [
         provideHttpClient(withInterceptors([apiErrorInterceptor])),
         provideHttpClientTesting(),
-        { provide: ToastService, useValue: toastSpy }
+        { provide: ToastService, useValue: toastSpy },
       ],
     });
     httpTestingController = TestBed.inject(HttpTestingController);
@@ -35,11 +43,11 @@ describe("apiUrlInterceptor", () => {
       },
     });
     const req = httpTestingController.expectOne(url);
-    req.flush(null, {status: 400, statusText: "Unknown Error"});
+    req.flush(null, { status: 400, statusText: "Unknown Error" });
     expect(toastSpy.add).toHaveBeenCalled();
     expect(toastSpy.add).toHaveBeenCalledWith({
       message: `Ocurrio un error: Unknown Error`,
-      type: "error"
+      type: "error",
     });
   });
 
@@ -52,12 +60,12 @@ describe("apiUrlInterceptor", () => {
       },
     });
     const req = httpTestingController.expectOne(url);
-    req.flush({error: errorMsg}, {status: 500, statusText: "API error"});
+    req.flush({ error: errorMsg }, { status: 500, statusText: "API error" });
     expect(toastSpy.add).toHaveBeenCalled();
     expect(toastSpy.add).toHaveBeenCalledWith({
       message: `Código de error: 500, ${errorMsg}`,
       type: "error",
-      duration: 7000
+      duration: 7000,
     });
   });
 });

@@ -1,7 +1,7 @@
 import { Component, ViewChild } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { MatFormFieldModule } from "@angular/material/form-field";
-import {MatSelectChange, MatSelectModule} from "@angular/material/select";
+import { MatSelectChange, MatSelectModule } from "@angular/material/select";
 
 import { BaseInputComponent } from "../BaseInputComponent";
 import { NG_VALUE_ACCESSOR } from "@angular/forms";
@@ -48,5 +48,4 @@ export class SelectEstadoComponent extends BaseInputComponent {
       this.inputRef.nativeElement.value = value;
     }
   } */
-
 }

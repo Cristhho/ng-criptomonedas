@@ -1,11 +1,11 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Validators } from '@angular/forms';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { Validators } from "@angular/forms";
 
-import { InputComponent } from './input.component';
-import { configureControlValueAccesorTests, findByQuery } from '../../../test';
-import { setInputValue } from '../../../test/forms';
+import { InputComponent } from "./input.component";
+import { configureControlValueAccesorTests, findByQuery } from "../../../test";
+import { setInputValue } from "../../../test/forms";
 
-describe('InputTextComponent', () => {
+describe("InputTextComponent", () => {
   let onChangeSpy: jasmine.Spy;
   let onTouchedSpy: jasmine.Spy;
 
@@ -15,18 +15,18 @@ describe('InputTextComponent', () => {
   configureControlValueAccesorTests({ component: InputComponent });
 
   beforeEach(() => {
-    onChangeSpy = jasmine.createSpy('onChangeSpy');
-    onTouchedSpy = jasmine.createSpy('onTouchedSpy');
+    onChangeSpy = jasmine.createSpy("onChangeSpy");
+    onTouchedSpy = jasmine.createSpy("onTouchedSpy");
 
     fixture = TestBed.createComponent(InputComponent);
     component = fixture.componentInstance;
-    component.inputId = 'test';
+    component.inputId = "test";
     fixture.detectChanges();
   });
 
-  it('should call the register methods', () => {
-    const spyRegisterChange = spyOn(component, 'registerOnChange');
-    const spyRegisterTouch = spyOn(component, 'registerOnTouched');
+  it("should call the register methods", () => {
+    const spyRegisterChange = spyOn(component, "registerOnChange");
+    const spyRegisterTouch = spyOn(component, "registerOnTouched");
 
     component.registerOnChange(onChangeSpy);
     component.registerOnTouched(onTouchedSpy);
@@ -37,23 +37,23 @@ describe('InputTextComponent', () => {
     expect(onTouchedSpy).toHaveBeenCalledTimes(0);
   });
 
-  describe('when register ControlValueAccessor methods', () => {
+  describe("when register ControlValueAccessor methods", () => {
     beforeEach(() => {
       component.registerOnChange(onChangeSpy);
       component.registerOnTouched(onTouchedSpy);
     });
 
-    it('should register on touch as a function', () => {
+    it("should register on touch as a function", () => {
       expect(component.onTouched).toBeDefined();
-      expect(typeof component.onTouched).toBe('function');
+      expect(typeof component.onTouched).toBe("function");
     });
 
-    it('should call onBlurHandler', () => {
+    it("should call onBlurHandler", () => {
       const inputElement: HTMLInputElement = findByQuery(
         fixture,
-        'input'
+        "input",
       ).nativeElement;
-      const blurEvent = new Event('blur');
+      const blurEvent = new Event("blur");
 
       inputElement.dispatchEvent(blurEvent);
 
@@ -61,22 +61,22 @@ describe('InputTextComponent', () => {
       expect(onTouchedSpy).toHaveBeenCalled();
     });
 
-    it('should indicate the input is invalid', () => {
+    it("should indicate the input is invalid", () => {
       component.formControl.setValidators(Validators.required);
       component.formControl.updateValueAndValidity();
 
       expect(onChangeSpy).toHaveBeenCalledTimes(0);
       expect(onTouchedSpy).toHaveBeenCalledTimes(0);
-      expect(component.formControl.status).toBe('INVALID');
+      expect(component.formControl.status).toBe("INVALID");
     });
 
-    it('should change the input value', () => {
-      const value = 'test';
-      const input = findByQuery(fixture, 'input')
+    it("should change the input value", () => {
+      const value = "test";
+      const input = findByQuery(fixture, "input")
         .nativeElement as HTMLInputElement;
-      const changeSpy = spyOn(component, 'onChangeHandler');
-      const inputEvent = new Event('input');
-      setInputValue({ fixture, selector: 'input', value, event: inputEvent });
+      const changeSpy = spyOn(component, "onChangeHandler");
+      const inputEvent = new Event("input");
+      setInputValue({ fixture, selector: "input", value, event: inputEvent });
       component.formControl.setValue(value);
       component.formControl.updateValueAndValidity();
 

@@ -11,7 +11,7 @@ import { FormErrors } from "../utils";
   standalone: true,
   imports: [FormInputErrorDirective],
   template: `<div>
-    <input coreFormInputError [inputControl]="control" />
+    <input uiFormInputError [inputControl]="control" />
   </div>`,
 })
 class TestComponent {

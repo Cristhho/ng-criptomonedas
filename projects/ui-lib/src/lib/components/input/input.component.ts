@@ -1,7 +1,13 @@
-import { Component, ElementRef, Injector, Input, ViewChild } from "@angular/core";
+import {
+  Component,
+  ElementRef,
+  Injector,
+  Input,
+  ViewChild,
+} from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { NG_VALUE_ACCESSOR } from "@angular/forms";
-import {MatInputModule} from "@angular/material/input";
+import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
 
 import { BaseInputComponent } from "../BaseInputComponent";
@@ -59,5 +65,4 @@ export class InputComponent extends BaseInputComponent {
       this.inputRef.nativeElement.value = value;
     }
   }
-
 }

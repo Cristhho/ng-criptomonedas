@@ -1,18 +1,20 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from "@angular/common";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  Input,
+} from "@angular/core";
+import { MatButtonModule } from "@angular/material/button";
 
-import { FormularioService } from '../../../application/services/formulario.service';
-import { StorageService } from '../../../application/services';
+import { FormularioService } from "../../../application/services/formulario.service";
+import { StorageService } from "../../../application/services";
 
 @Component({
-  selector: 'cry-btn-guardar',
+  selector: "cry-btn-guardar",
   standalone: true,
-  imports: [
-    CommonModule,
-    MatButtonModule,
-  ],
-  templateUrl: './btn-guardar.component.html',
+  imports: [CommonModule, MatButtonModule],
+  templateUrl: "./btn-guardar.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BtnGuardarComponent {
@@ -45,4 +47,3 @@ export class BtnGuardarComponent {
     this.storageService.actualizar(id, rest);
   }
 }
-

@@ -1,5 +1,10 @@
 import { CommonModule } from "@angular/common";
-import { ChangeDetectionStrategy, Component, inject, Inject } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  Inject,
+} from "@angular/core";
 import {
   MAT_DIALOG_DATA,
   MatDialogTitle,
@@ -8,7 +13,7 @@ import {
   MatDialogClose,
   MatDialogRef,
 } from "@angular/material/dialog";
-import {MatButtonModule} from "@angular/material/button";
+import { MatButtonModule } from "@angular/material/button";
 
 import { ID } from "@domain";
 import { StorageService } from "../../../application/services";
@@ -26,7 +31,7 @@ type ModalData = {
     MatDialogContent,
     MatDialogActions,
     MatDialogClose,
-    MatButtonModule
+    MatButtonModule,
   ],
   templateUrl: "./modal-eliminar.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -36,11 +41,11 @@ export class ModalEliminarComponent {
 
   constructor(
     private readonly dialogRef: MatDialogRef<ModalEliminarComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: ModalData) {}
+    @Inject(MAT_DIALOG_DATA) public data: ModalData,
+  ) {}
 
   eliminar() {
     this.storageService.eliminarCripto(this.data.id);
     this.dialogRef.close();
   }
 }
-

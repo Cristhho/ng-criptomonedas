@@ -8,7 +8,7 @@ import { ToastComponent } from "@ui-lib";
   standalone: true,
   imports: [RouterOutlet, ToastComponent],
   templateUrl: "./app.component.html",
-  styleUrl: "./app.component.css"
+  styleUrl: "./app.component.css",
 })
 export class AppComponent {
   title = "crypto-tracking";

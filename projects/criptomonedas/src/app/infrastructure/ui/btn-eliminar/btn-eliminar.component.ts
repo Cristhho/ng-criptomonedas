@@ -1,5 +1,10 @@
 import { CommonModule } from "@angular/common";
-import { ChangeDetectionStrategy, Component, inject, Input } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  Input,
+} from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 
 import { MatButtonModule } from "@angular/material/button";
@@ -10,11 +15,7 @@ import { ModalEliminarComponent } from "../modal-eliminar/modal-eliminar.compone
 @Component({
   selector: "cry-btn-eliminar",
   standalone: true,
-  imports: [
-    CommonModule,
-    MatIconModule,
-    MatButtonModule,
-  ],
+  imports: [CommonModule, MatIconModule, MatButtonModule],
   templateUrl: "./btn-eliminar.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -27,9 +28,8 @@ export class BtnEliminarComponent {
   abrirModal() {
     this.dialog.open(ModalEliminarComponent, {
       data: {
-        id: this.id
+        id: this.id,
       },
     });
   }
 }
-

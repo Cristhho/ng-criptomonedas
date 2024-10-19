@@ -36,7 +36,9 @@ export abstract class BaseInputComponent
   }
 
   get errorClass() {
-    return this.isInvalid ? "mat-form-field-invalid ng-dirty ng-invalid mdc-text-field--invalid" : "";
+    return this.isInvalid
+      ? "mat-form-field-invalid ng-dirty ng-invalid mdc-text-field--invalid"
+      : "";
   }
 
   constructor(protected readonly injector: Injector) {}

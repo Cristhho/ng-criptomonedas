@@ -1,5 +1,11 @@
 import { CommonModule } from "@angular/common";
-import { ChangeDetectionStrategy, Component, Input, OnInit, signal } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+  signal,
+} from "@angular/core";
 import { MatCardModule } from "@angular/material/card";
 import { BtnGuardarComponent, FormCriptoComponent } from "../../ui";
 import { FormularioService } from "../../../application/services/formulario.service";
@@ -12,13 +18,13 @@ import { StorageService } from "../../../application/services";
     CommonModule,
     MatCardModule,
     FormCriptoComponent,
-    BtnGuardarComponent
+    BtnGuardarComponent,
   ],
   templateUrl: "./editar.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EditarComponent implements OnInit {
-  @Input({required: true})
+  @Input({ required: true })
   set id(cripto: string) {
     this.cripto.set(cripto);
   }
@@ -27,7 +33,7 @@ export class EditarComponent implements OnInit {
 
   constructor(
     private readonly formularioService: FormularioService,
-    private readonly storageService: StorageService
+    private readonly storageService: StorageService,
   ) {
     this.formularioService.construirFormulario();
   }
@@ -37,4 +43,3 @@ export class EditarComponent implements OnInit {
     this.formularioService.formulario.patchValue(cripto);
   }
 }
-

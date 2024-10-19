@@ -1,6 +1,6 @@
-import { ComponentFixture } from '@angular/core/testing';
+import { ComponentFixture } from "@angular/core/testing";
 
-import { findByQuery } from './finders';
+import { findByQuery } from "./finders";
 
 type SetInputValueOptions<T> = {
   fixture: ComponentFixture<T>;
@@ -18,6 +18,6 @@ export const setInputValue = <T>({
   const input = findByQuery(fixture, selector);
   const inputElement: HTMLInputElement = input.nativeElement;
   inputElement.value = value;
-  inputElement.dispatchEvent(event ? event : new Event('input'));
-  inputElement.dispatchEvent(new Event('blur'));
+  inputElement.dispatchEvent(event ? event : new Event("input"));
+  inputElement.dispatchEvent(new Event("blur"));
 };

@@ -1,7 +1,14 @@
-<mat-form-field [ngClass]="errorClass" coreFormInputError
-[inputControl]="formControl">
-  <mat-label>{{label}}</mat-label>
-  <mat-select [value]="value" (blur)="onBlurHandler()" (selectionChange)="onChangeHandler($event)">
+<mat-form-field
+  [ngClass]="errorClass"
+  uiFormInputError
+  [inputControl]="formControl"
+>
+  <mat-label>{{ label }}</mat-label>
+  <mat-select
+    [value]="value"
+    (blur)="onBlurHandler()"
+    (selectionChange)="onChangeHandler($event)"
+  >
     <mat-option></mat-option>
     <mat-option [value]="0">Activo</mat-option>
     <mat-option [value]="1">Inactivo</mat-option>

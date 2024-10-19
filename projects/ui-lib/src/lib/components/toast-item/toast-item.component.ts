@@ -1,17 +1,15 @@
-import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { CommonModule } from "@angular/common";
+import { Component, Input } from "@angular/core";
 
-import { TipoToast } from '@domain';
-import { ToastService } from '../../services/toast.service';
+import { TipoToast } from "@domain";
+import { ToastService } from "../../services/toast.service";
 
 @Component({
-  selector: 'app-toast-item',
+  selector: "ui-toast-item",
   standalone: true,
-  imports: [
-    CommonModule
-  ],
-  templateUrl: './toast-item.component.html',
-  styleUrls: ['./toast-item.component.css']
+  imports: [CommonModule],
+  templateUrl: "./toast-item.component.html",
+  styleUrls: ["./toast-item.component.css"],
 })
 export class ToastItemComponent {
   @Input()

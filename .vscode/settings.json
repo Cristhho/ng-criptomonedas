@@ -1,4 +1,7 @@
 {
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
   "angular-schematics.schematicsDefaultOptions": {
     "angular-*": {
       "externalTemplate": true,

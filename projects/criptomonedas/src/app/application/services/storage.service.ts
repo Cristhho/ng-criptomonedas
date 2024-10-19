@@ -1,12 +1,12 @@
-import { inject, Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from "@angular/core";
 
-import { CriptomonedasService } from './criptomonedas.service';
-import { Crypto, ID, SesionAdapter } from '@domain';
-import { finalize } from 'rxjs';
-import { ToastService } from '@ui-lib';
+import { CriptomonedasService } from "./criptomonedas.service";
+import { Crypto, ID, SesionAdapter } from "@domain";
+import { finalize } from "rxjs";
+import { ToastService } from "@ui-lib";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class StorageService implements SesionAdapter {
   private readonly storageKey = "CRYPTOS";
@@ -19,18 +19,19 @@ export class StorageService implements SesionAdapter {
     this.cargando.set(true);
     const criptosEnSession = this.cargarDesdeSesion();
     if (criptosEnSession === null || criptosEnSession.length < 1) {
-      this.servicioCripto.obtenerTodo().pipe(
-        finalize(() => this.cargando.set(false))
-      ).subscribe({
-        next: (criptos) => {
-          this.guardarCriptos(criptos);
-          this.toastService.add({
-            message: "Criptomonedas guardadas en sesion",
-            type: "success",
-            duration: 3000,
-          });
-        },
-      });
+      this.servicioCripto
+        .obtenerTodo()
+        .pipe(finalize(() => this.cargando.set(false)))
+        .subscribe({
+          next: (criptos) => {
+            this.guardarCriptos(criptos);
+            this.toastService.add({
+              message: "Criptomonedas guardadas en sesion",
+              type: "success",
+              duration: 3000,
+            });
+          },
+        });
     } else {
       this.criptosSignal.set(criptosEnSession);
       this.cargando.set(false);
@@ -64,7 +65,7 @@ export class StorageService implements SesionAdapter {
     });
   }
 
-  actualizar(id: Crypto['id'], cripto: Omit<Crypto, 'id'>): void {
+  actualizar(id: Crypto["id"], cripto: Omit<Crypto, "id">): void {
     const indice = this.buscarIndice(id);
     const criptos = this.criptosSignal();
     criptos[indice] = {

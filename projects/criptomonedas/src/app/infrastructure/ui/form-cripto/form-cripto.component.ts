@@ -1,11 +1,21 @@
 import { CommonModule } from "@angular/common";
-import { ChangeDetectionStrategy, Component, inject, Input, OnInit } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  Input,
+  OnInit,
+} from "@angular/core";
 import { FormControl, ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
 
 import { FormularioService } from "../../../application/services/formulario.service";
-import { FormInputErrorDirective, InputComponent, SelectEstadoComponent } from "@ui-lib";
+import {
+  FormInputErrorDirective,
+  InputComponent,
+  SelectEstadoComponent,
+} from "@ui-lib";
 
 @Component({
   selector: "cry-form-cripto",
@@ -17,7 +27,7 @@ import { FormInputErrorDirective, InputComponent, SelectEstadoComponent } from "
     MatFormFieldModule,
     FormInputErrorDirective,
     InputComponent,
-    SelectEstadoComponent
+    SelectEstadoComponent,
   ],
   templateUrl: "./form-cripto.component.html",
   styleUrl: "./form-cripto.component.css",

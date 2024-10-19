@@ -1,7 +1,10 @@
-<mat-form-field [ngClass]="errorClass" coreFormInputError
-[inputControl]="formControl">
+<mat-form-field
+  [ngClass]="errorClass"
+  uiFormInputError
+  [inputControl]="formControl"
+>
   @if (label) {
-    <mat-label [id]="inputId">{{label}}</mat-label>
+    <mat-label [id]="inputId">{{ label }}</mat-label>
   }
   <input
     matInput
@@ -12,5 +15,6 @@
     [disabled]="disabled"
     (input)="onChangeHandler($event)"
     (blur)="onBlurHandler()"
-    #inputRef>
+    #inputRef
+  />
 </mat-form-field>

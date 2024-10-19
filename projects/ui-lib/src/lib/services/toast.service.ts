@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { ToastModel } from "@domain";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class ToastService {
   private _toasts: Array<ToastModel> = [];

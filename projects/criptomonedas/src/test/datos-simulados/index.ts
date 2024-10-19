@@ -1,1 +1,1 @@
-export * from './cryptos';
+export * from "./cryptos";

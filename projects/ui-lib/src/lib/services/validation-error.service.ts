@@ -27,7 +27,7 @@ export class ValidationErrorService {
       case "maxlength":
         return `${FormErrors.MAXLENGTH}${errors["maxlength"].requiredLength}`;
       case "existeId":
-        return "Este id ya existe, use oto."
+        return "Este id ya existe, use oto.";
       case "fecha":
         return FormErrors.DATE;
       default:

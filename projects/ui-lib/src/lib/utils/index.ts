@@ -1,8 +1,8 @@
 export function isEmpty(value: unknown): boolean {
-  if (typeof value === 'number' || typeof value === 'boolean') {
+  if (typeof value === "number" || typeof value === "boolean") {
     return false;
   }
-  if (typeof value === 'undefined' || value === null) {
+  if (typeof value === "undefined" || value === null) {
     return true;
   }
   if (value instanceof Date) {
@@ -15,11 +15,11 @@ export function isEmpty(value: unknown): boolean {
     if (value.length === 0) {
       return true;
     }
-    if (value.every(item => isEmpty(item))) {
+    if (value.every((item) => isEmpty(item))) {
       return true;
     }
   }
-  if (value === '') {
+  if (value === "") {
     return true;
   }
 

@@ -91,6 +91,15 @@
             "scripts": [],
             "karmaConfig": "karma.conf.js"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     },
@@ -122,6 +131,15 @@
             "polyfills": [
               "zone.js",
               "zone.js/testing"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/domain/**/*.ts",
+              "projects/domain/**/*.html"
             ]
           }
         }
@@ -214,6 +232,15 @@
             "scripts": [],
             "karmaConfig": "projects/criptomonedas/karma.conf.js"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/criptomonedas/**/*.ts",
+              "projects/criptomonedas/**/*.html"
+            ]
+          }
         }
       }
     },
@@ -254,7 +281,7 @@
       "projectType": "library",
       "root": "projects/ui-lib",
       "sourceRoot": "projects/ui-lib/src",
-      "prefix": "lib",
+      "prefix": "ui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -280,6 +307,15 @@
               "zone.js/testing"
             ],
             "karmaConfig": "projects/ui-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ui-lib/**/*.ts",
+              "projects/ui-lib/**/*.html"
+            ]
           }
         }
       }

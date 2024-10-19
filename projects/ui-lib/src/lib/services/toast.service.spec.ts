@@ -3,7 +3,7 @@ import { TestBed } from "@angular/core/testing";
 import { ToastService } from "./toast.service";
 import { ToastModel } from "@domain";
 
-const toast: ToastModel = {message: "", type: "success"};
+const toast: ToastModel = { message: "", type: "success" };
 
 describe("ToastService", () => {
   let service: ToastService;
@@ -34,5 +34,5 @@ describe("ToastService", () => {
     service.add(toast);
     service.remove(0);
     expect(service.toasts.length).toBe(0);
-  })
+  });
 });

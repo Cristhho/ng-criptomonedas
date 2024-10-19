@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { Validators } from "@angular/forms";
-import {HarnessLoader} from "@angular/cdk/testing";
-import {TestbedHarnessEnvironment} from "@angular/cdk/testing/testbed";
-import {MatSelectHarness} from "@angular/material/select/testing";
-import {NoopAnimationsModule} from "@angular/platform-browser/animations";
+import { HarnessLoader } from "@angular/cdk/testing";
+import { TestbedHarnessEnvironment } from "@angular/cdk/testing/testbed";
+import { MatSelectHarness } from "@angular/material/select/testing";
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 
 import { SelectEstadoComponent } from "./select-estado.component";
-import { configureControlValueAccesorTests, findAllByQuery, findByQuery } from "../../../test";
+import { configureControlValueAccesorTests } from "../../../test";
 import { MatOptionHarness } from "@angular/material/core/testing";
 
 const opciones = [
-  {label: "", value: ""},
-  {label: "Activo", value: "A"},
-  {label: "Inactivo", value: "I"},
+  { label: "", value: "" },
+  { label: "Activo", value: "A" },
+  { label: "Inactivo", value: "I" },
 ];
 
 describe("SelectEstadoComponent", () => {

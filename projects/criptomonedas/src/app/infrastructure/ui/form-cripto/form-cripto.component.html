@@ -1,22 +1,45 @@
 <form [formGroup]="formulario">
   <div class="form-grid">
     <div>
-      <ui-input inputId="nombre" label="Nombre" inputType="text" formControlName="nombre" />
+      <ui-input
+        inputId="nombre"
+        label="Nombre"
+        inputType="text"
+        formControlName="nombre"
+      />
     </div>
     <div>
-      <ui-input inputId="codigo" label="Código" inputType="text" formControlName="id" />
+      <ui-input
+        inputId="codigo"
+        label="Código"
+        inputType="text"
+        formControlName="id"
+      />
     </div>
     <div>
-      <ui-input inputId="signo" label="Signo" inputType="text" formControlName="signo" />
+      <ui-input
+        inputId="signo"
+        label="Signo"
+        inputType="text"
+        formControlName="signo"
+      />
     </div>
     <div>
-      <ui-select-estado inputId="estado" label="Seleccione una opcion" formControlName="estado" />
+      <ui-select-estado
+        inputId="estado"
+        label="Seleccione una opcion"
+        formControlName="estado"
+      />
     </div>
     <div>
-      <mat-form-field [ngStyle]="{width: '100%'}" #ref>
+      <mat-form-field [ngStyle]="{ width: '100%' }" #ref>
         <mat-label id="descripcion">Descripción</mat-label>
-        <textarea matInput formControlName="descripcion" coreFormInputError
-          [inputControl]="descFormControl"></textarea>
+        <textarea
+          matInput
+          formControlName="descripcion"
+          uiFormInputError
+          [inputControl]="descFormControl"
+        ></textarea>
       </mat-form-field>
     </div>
   </div>

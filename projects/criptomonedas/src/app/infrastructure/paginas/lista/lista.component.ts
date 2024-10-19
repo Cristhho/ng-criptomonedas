@@ -1,18 +1,25 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, effect, inject, OnInit, ViewChild } from '@angular/core';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { CommonModule } from "@angular/common";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  inject,
+  OnInit,
+  ViewChild,
+} from "@angular/core";
+import { MatTableDataSource, MatTableModule } from "@angular/material/table";
+import { MatPaginator, MatPaginatorModule } from "@angular/material/paginator";
+import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
 
-import { Crypto } from '@domain';
-import { StorageService } from '../../../application/services';
-import { ProgressBarComponent } from '@ui-lib';
-import { BtnEliminarComponent } from '../../ui';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Crypto } from "@domain";
+import { StorageService } from "../../../application/services";
+import { ProgressBarComponent } from "@ui-lib";
+import { BtnEliminarComponent } from "../../ui";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
-  selector: 'cry-lista',
+  selector: "cry-lista",
   standalone: true,
   imports: [
     CommonModule,
@@ -23,8 +30,8 @@ import { ActivatedRoute, Router } from '@angular/router';
     ProgressBarComponent,
     BtnEliminarComponent,
   ],
-  templateUrl: './lista.component.html',
-  styleUrl: './lista.component.css',
+  templateUrl: "./lista.component.html",
+  styleUrl: "./lista.component.css",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListaComponent implements OnInit {
@@ -53,4 +60,3 @@ export class ListaComponent implements OnInit {
     this.router.navigate([id], { relativeTo: this.route.parent });
   }
 }
-
